@@ -15,7 +15,7 @@ def lerXML(ficheiro):
                     bateria = int(child.text)
                 except ValueError:
                     bateria = "NaN"
-                if bateria in range(0,101):
+                if bateria >= 0 and bateria <= 100:
                     veiculo["bateria"] = bateria
                 else:
                     veiculo["bateria"] = "Fora do intervalo esperado"
