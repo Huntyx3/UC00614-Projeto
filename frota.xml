@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frota>
+    <veiculo>
+        <id>EV-001</id>
+        <marca>Tesla</marca>
+        <modelo>Model 3</modelo>
+        <autonomia>490</autonomia>
+        <bateria>100</bateria>
+        <disponibilidade>Disponível</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-002</id>
+        <marca>Nissan</marca>
+        <modelo>Leaf</modelo>
+        <autonomia>270</autonomia>
+        <bateria>80</bateria>
+        <disponibilidade>Em aluguer</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-003</id>
+        <marca>Renault</marca>
+        <modelo>Zoe</modelo>
+        <autonomia>390</autonomia>
+        <bateria>45</bateria>
+        <disponibilidade>Disponível</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-004</id>
+        <marca>Volkswagen</marca>
+        <modelo>ID.4</modelo>
+        <autonomia>520</autonomia>
+        <bateria>15</bateria>
+        <disponibilidade>A carregar</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-005</id>
+        <marca>Hyundai</marca>
+        <modelo>KAUAI EV</modelo>
+        <autonomia>484</autonomia>
+        <bateria>90</bateria>
+        <disponibilidade>Disponível</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-006</id>
+        <marca>Kia</marca>
+        <modelo>EV6</modelo>
+        <autonomia>528</autonomia>
+        <bateria>60</bateria>
+        <disponibilidade>Em aluguer</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-007</id>
+        <marca>Peugeot</marca>
+        <modelo>e-208</modelo>
+        <autonomia>340</autonomia>
+        <bateria>100</bateria>
+        <disponibilidade>Disponível</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-008</id>
+        <marca>BMW</marca>
+        <modelo>i4</modelo>
+        <autonomia>590</autonomia>
+        <bateria>30</bateria>
+        <disponibilidade>Em manutenção</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-009</id>
+        <marca>Polestar</marca>
+        <modelo>2</modelo>
+        <autonomia>470</autonomia>
+        <bateria>5</bateria>
+        <disponibilidade>A carregar</disponibilidade>
+    </veiculo>
+    <veiculo>
+        <id>EV-010</id>
+        <marca>Audi</marca>
+        <modelo>Q4 e-tron</modelo>
+        <autonomia>510</autonomia>
+        <bateria>75</bateria>
+        <disponibilidade>Disponível</disponibilidade>
+    </veiculo>
+</frota>
