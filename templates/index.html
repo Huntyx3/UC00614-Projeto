@@ -1,11 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoRent - Mobilidade Elétrica na Guarda</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegação alinhada com o resto do site -->
+    <nav>
+      <a href="/">Início</a>
+      <a href="/frota">Frota</a>
+      <a href="/contactos">Contactos</a>
+      <span class="logo">EcoRent</span>
+    </nav>
+
+    <main>
+      <!-- Secção Principal (Hero) -->
+      <section class="hero">
+        <h1>
+          A EcoRent é a referência em mobilidade 100% elétrica na Guarda.<br>
+          Descubra a melhor frota sustentável da região para viajar sem
+          emissões.
+        </h1>
+        <p>
+          Sediada na cidade mais alta de Portugal, a EcoRent destaca-se como a
+          empresa líder em aluguer de viaturas ecológicas na Guarda e em toda a
+          região da Beira Alta. Oferecemos veículos elétricos modernos,
+          com autonomia verificada e carregamento garantido, aliando inovação
+          tecnológica ao máximo respeito pelo ambiente.
+        </p>
+        <a href="/frota" class="btn-hero">EXPLORAR CATÁLOGO</a>
+      </section>
+
+      <hr class="divisor" />
+
+      <!-- Secção Como Funciona (3 Passos) -->
+      <section class="como-funciona">
+        <h2>COMO FUNCIONA?</h2>
+        <div class="passos-grid">
+          <div class="passo-item">
+            <div class="circulo-passo">1</div>
+            <p>
+              Explore o nosso catálogo online, filtre por autonomia ou
+              disponibilidade e escolha a viatura elétrica ideal para a sua
+              viagem.
+            </p>
+          </div>
+
+          <div class="passo-item">
+            <div class="circulo-passo">2</div>
+            <p>
+              A equipa da EcoRent na Guarda confirma a reserva e prepara todos os detalhes da entrega.
+            </p>
+          </div>
+
+          <div class="passo-item">
+            <div class="circulo-passo">3</div>
+            <p>
+              Levante o veículo nas nossas instalações na Guarda e parta à descoberta com zero emissões!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+      <div class="footer-conteudo">
+        <!-- Coluna Esquerda: Newsletter -->
+        <div class="footer-newsletter">
+          <h3>ASSINE A NOSSA NEWSLETTER</h3>
+          <form
+            class="newsletter-form"
+            onsubmit="
+              event.preventDefault();
+              alert('Obrigado por subscrever a newsletter da EcoRent Guarda!');
+            "
+          >
+            <input
+              type="email"
+              placeholder="Introduza o seu email..."
+              required
+            />
+            <button type="submit">ASSINAR</button>
+          </form>
+        </div>
+
+        <!-- Coluna Direita: Links Úteis -->
+        <div class="footer-links">
+          <h3>ÚTEIS</h3>
+          <ul>
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/frota">Catálogo de Viaturas</a></li>
+            <li><a href="/contactos">Contactos e Localização</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 EcoRent - Todos os direitos reservados.
+      </div>
+    </footer>
+  </body>
 </html>

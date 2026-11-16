@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo</title>
+    <link rel ="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    ></linkrel>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/frota">Frota</a>
+      <a href="/contactos">Contactos</a>
+      <span class="logo">EcoRent</span>
+    </nav>
+    <main>
+      <h1>Catálogo de Veículos Elétricos</h1>
+      <form action="/frota" method="GET" class="barra-pesquisa">
+        <label for="pesquisa"><strong>Filtrar Frota:</strong></label>
+        <input
+          type="text"
+          id="pesquisa"
+          name="pesquisa"
+          placeholder="Pesquisar por marca ou modelo (ex: Tesla, Leaf)..."
+          value="{{ request.args.get('pesquisa', '') }}"
+        />
+        <label class="filtro-checkbox">
+            <input type="checkbox"
+            name="disponiveis"
+            {% if request.args.get('disponiveis') %}checked{% endif %}
+            >
+        Apenas disponíveis
+        </label>
+        <button type="submit">Pesquisar</button>
+        <a href="/frota" class="btn-limpar">Limpar</a>
+      </form>
+      <div class="frota-grid">
+        {% for veiculo in frota %}
+        <div class="cartao-veiculo">
+          <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
+          <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
+          <p><strong>Autonomia:</strong> {{ veiculo.autonomia }} km</p>
+          <p><strong>Disponibilidade:</strong> {{ veiculo.disponibilidade }}</p>
+          <div>
+            <strong>Estado da Bateria:</strong>
+            {% if veiculo.bateria is number %}
+            <span>{{ veiculo.bateria }}%</span>
+            <div class="bateria-fundo">
+              <!-- O atributo style mantém-se aqui porque o Jinja2 só processa variáveis dentro dos templates HTML -->
+              <div
+                class="bateria-nivel"
+                style="width:{{ veiculo.bateria }}%; background-color: {% if veiculo.bateria > 50 %}#16a34a{% elif veiculo.bateria > 20 %}#ea580c{% else %}#dc2626{% endif %};"
+              >
+                {{ veiculo.bateria }}%
+              </div>
+            </div>
+            {% else %}
+            <p style="color: #dc2626">Aviso: {{ veiculo.bateria }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% else %}
+        <p>Nenhum veículo encontrado com os critérios pesquisados.</p>
+        {% endfor %}
+      </div>
+    </main>
+    <!-- Rodapé (Footer) -->
+    <footer>
+      <div class="footer-conteudo">
+        <!-- Coluna Esquerda: Newsletter -->
+        <div class="footer-newsletter">
+          <h3>ASSINE A NOSSA NEWSLETTER</h3>
+          <form
+            class="newsletter-form"
+            onsubmit="
+              event.preventDefault();
+              alert('Obrigado por subscrever a newsletter da EcoRent Guarda!');
+            "
+          >
+            <input
+              type="email"
+              placeholder="Introduza o seu email..."
+              required
+            />
+            <button type="submit">ASSINAR</button>
+          </form>
+        </div>
+
+        <!-- Coluna Direita: Links Úteis -->
+        <div class="footer-links">
+          <h3>ÚTEIS</h3>
+          <ul>
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/frota">Catálogo de Viaturas</a></li>
+            <li><a href="/contactos">Contactos e Localização</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 EcoRent - Todos os direitos reservados.
+      </div>
+    </footer>
+  </body>
+</html>

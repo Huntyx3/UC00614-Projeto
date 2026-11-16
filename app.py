@@ -13,12 +13,12 @@ def lerXML(ficheiro):
             if child.tag == "bateria":
                 try:
                     bateria = int(child.text)
+                    if 0 <= bateria <= 100:
+                        veiculo["bateria"] = bateria
+                    else:
+                        veiculo["bateria"] = "Fora do intervalo esperado"
                 except ValueError:
-                    bateria = "NaN"
-                if bateria >= 0 and bateria <= 100:
-                    veiculo["bateria"] = bateria
-                else:
-                    veiculo["bateria"] = "Fora do intervalo esperado"
+                    veiculo["bateria"] = "NaN"
             else: 
                 veiculo[child.tag] = child.text
 
@@ -26,20 +26,27 @@ def lerXML(ficheiro):
 
     return veiculos
 
-lerXML("frota.xml")
-
 # render_template para ligar ficheiros ao html
 app = Flask(__name__, template_folder="templates")
 @app.route("/")
 def index ():
     return render_template('index.html')
 
-@app.route("/catalogo")
-def catalogo ():
-    
-        
+@app.route("/frota")
+def frota ():
+    veiculos = lerXML("frota.xml")
 
-    return render_template('catalogo.html')
+    # obter texto no input field "pesquisa"
+    pesquisa = request.args.get('pesquisa')
+    disponivelFiltro = request.args.get("disponiveis")
+
+    if pesquisa or disponivelFiltro:
+        veiculos = [
+            v for v in veiculos 
+            if (pesquisa.lower() in v['marca'].lower() or pesquisa.lower() in v['modelo'].lower())
+            and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
+        ]
+    return render_template('frota.html', frota = veiculos)
 
 @app.route("/contactos")
 def contactos ():

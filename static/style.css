@@ -1,0 +1,311 @@
+/* Estilos gerais da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de navegação entre as 3 páginas obrigatórias */
+nav {
+  background-color: #1e293b;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: auto; /* Empurra apenas o EcoRent para o canto direito */
+  color: #38bdf8;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* Contentor principal */
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Área do formulário de pesquisa */
+.barra-pesquisa {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.barra-pesquisa input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.barra-pesquisa button {
+  padding: 8px 16px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-limpar {
+  padding: 8px 14px;
+  background-color: #64748b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Grelha para organizar os cartões dos veículos */
+.frota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Cartão individual de cada veículo */
+.cartao-veiculo {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #0284c7;
+}
+
+.cartao-veiculo h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+/* Desafio de Pesquisa: Contentor exterior da barra de bateria */
+.bateria-fundo {
+  width: 100%;
+  height: 22px;
+  background-color: #e2e8f0;
+  border-radius: 11px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+/* Barra interior que cresce conforme a percentagem vinda do XML */
+.bateria-nivel {
+  height: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 22px;
+  transition: width 0.3s ease;
+}
+
+/* Alinha a checkbox e o texto lado a lado */
+.filtro-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #0284c7;
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.btn-hero {
+  display: inline-block;
+  background-color: #0284c7;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-hero:hover {
+  background-color: #0369a1;
+}
+
+/* Linha separadora */
+.divisor {
+  border: 0;
+  height: 1px;
+  background-color: #cbd5e1;
+  margin: 20px auto 40px auto;
+}
+
+/* --- SECÇÃO COMO FUNCIONA --- */
+.como-funciona {
+  text-align: center;
+  padding: 10px 20px 50px 20px;
+}
+
+.como-funciona h2 {
+  color: #1e293b;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.passos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+}
+
+.passo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circulo-passo {
+  width: 75px;
+  height: 75px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+}
+
+.passo-item p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.footer-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 35px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-newsletter h3,
+.footer-links h3 {
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: #38bdf8;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  width: 240px;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 10px 18px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #0369a1;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 18px 20px;
+  border-top: 1px solid #334155;
+  font-size: 13px;
+  color: #94a3b8;
+}

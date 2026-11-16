@@ -1,11 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactos - Gestão de Frota EV</title>
+    <!-- Liga ao mesmo ficheiro CSS usado no catálogo -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Menu de navegação idêntico ao das restantes páginas -->
+    <nav>
+      <a href="/">Início</a>
+      <a href="/frota">Frota</a>
+      <a href="/contactos">Contactos</a>
+      <span class="logo">EcoRent</span>
+    </nav>
+
+    <main>
+      <h1>Contactos e Apoio ao Cliente</h1>
+      <p>
+        Entre em contacto com a nossa equipa para informações sobre alugueres,
+        postos de carregamento ou assistência em viagem.
+      </p>
+
+      <!-- Reutiliza a grelha e os cartões do style.css para manter o visual uniforme -->
+      <div class="frota-grid">
+        <!-- Cartão 1: Morada e Horário -->
+        <div class="cartao-veiculo">
+          <h3>Sede e Parque de Frota</h3>
+          <p>
+            <strong>Morada:</strong> Avenida da Sustentabilidade, nº 58,
+            6300-191 Guarda
+          </p>
+          <p><strong>Horário:</strong> Segunda a Sábado, das 08h00 às 20h00</p>
+          <p>
+            <strong>Postos de Carga:</strong> Disponíveis 24h no parque central
+          </p>
+        </div>
+
+        <!-- Cartão 2: Contactos Diretos -->
+        <div class="cartao-veiculo">
+          <h3>Contactos</h3>
+          <p><strong>Apoio e Reservas (das 08h00 às 20h00):</strong> +351 210 123 456</p>
+          <p><strong>Assistência em Viagem (24h):</strong> +351 800 200 300</p>
+          <p><strong>Email:</strong> frota@ecorent-ev.pt</p>
+        </div>
+      </div>
+    </main>
+    <!-- Rodapé (Footer) -->
+    <footer>
+      <div class="footer-conteudo">
+        <!-- Coluna Esquerda: Newsletter -->
+        <div class="footer-newsletter">
+          <h3>ASSINE A NOSSA NEWSLETTER</h3>
+          <form
+            class="newsletter-form"
+            onsubmit="
+              event.preventDefault();
+              alert('Obrigado por subscrever a newsletter da EcoRent Guarda!');
+            "
+          >
+            <input
+              type="email"
+              placeholder="Introduza o seu email..."
+              required
+            />
+            <button type="submit">ASSINAR</button>
+          </form>
+        </div>
+
+        <!-- Coluna Direita: Links Úteis -->
+        <div class="footer-links">
+          <h3>ÚTEIS</h3>
+          <ul>
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/frota">Catálogo de Viaturas</a></li>
+            <li><a href="/contactos">Contactos e Localização</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 EcoRent - Todos os direitos reservados.
+      </div>
+    </footer>
+  </body>
 </html>
