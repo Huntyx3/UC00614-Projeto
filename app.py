@@ -13,12 +13,15 @@ def lerXML(ficheiro):
             if child.tag == "bateria":
                 try:
                     bateria = int(child.text)
-                    if 0 <= bateria <= 100:
-                        veiculo["bateria"] = bateria
-                    else:
-                        veiculo["bateria"] = "Fora do intervalo esperado"
+                    veiculo["bateria"] = bateria if 0 <= bateria <= 100 else "Fora do intervalo esperado"
                 except ValueError:
                     veiculo["bateria"] = "NaN"
+            elif child.tag == "autonomia":
+                try:
+                    autonomia = int(child.text)
+                    veiculo["autonomia"] = autonomia if autonomia > 0 else "Valor inválido"
+                except ValueError:
+                    veiculo["autonomia"] = "NaN"
             else: 
                 veiculo[child.tag] = child.text
 
@@ -37,7 +40,7 @@ def frota ():
     veiculos = lerXML("frota.xml")
 
     # obter texto no input field "pesquisa"
-    pesquisa = request.args.get('pesquisa')
+    pesquisa = request.args.get('pesquisa', "")
     disponivelFiltro = request.args.get("disponiveis")
 
     if pesquisa or disponivelFiltro:

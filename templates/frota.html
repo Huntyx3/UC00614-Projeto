@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo</title>
     <link rel ="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
-    ></linkrel>
+    ></link>
   </head>
   <body>
     <nav>
@@ -41,7 +41,12 @@
         <div class="cartao-veiculo">
           <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
           <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
-          <p><strong>Autonomia:</strong> {{ veiculo.autonomia }} km</p>
+          <strong>Autonomia:</strong>
+          {% if veiculo.autonomia is number and veiculo.autonomia > 0 %}
+          <span>{{ veiculo.autonomia }} km</span>
+          {% else %}
+          <p style="color: #dc2626">Aviso: {{ veiculo.autonomia }}</p>
+          {% endif %}
           <p><strong>Disponibilidade:</strong> {{ veiculo.disponibilidade }}</p>
           <div>
             <strong>Estado da Bateria:</strong>
