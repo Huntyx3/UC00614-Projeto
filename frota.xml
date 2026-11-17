@@ -7,6 +7,7 @@
         <autonomia>490</autonomia>
         <bateria>100</bateria>
         <disponibilidade>Disponível</disponibilidade>
+        <imagem>tesla-model3-branco.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-002</id>
@@ -15,6 +16,8 @@
         <autonomia>270</autonomia>
         <bateria>80</bateria>
         <disponibilidade>Em aluguer</disponibilidade>
+        <imagem>nissan-leaf-turquesa.png</imagem>
+        
     </veiculo>
     <veiculo>
         <id>EV-003</id>
@@ -23,6 +26,7 @@
         <autonomia>390</autonomia>
         <bateria>45</bateria>
         <disponibilidade>Disponível</disponibilidade>
+        <imagem>renault-zoe-azul.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-004</id>
@@ -31,6 +35,7 @@
         <autonomia>520</autonomia>
         <bateria>15</bateria>
         <disponibilidade>A carregar</disponibilidade>
+         <imagem>volkswagem-id.4-azul.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-005</id>
@@ -39,6 +44,7 @@
         <autonomia>484</autonomia>
         <bateria>90</bateria>
         <disponibilidade>Disponível</disponibilidade>
+        <imagem>hyundai-kauai_ev-cinza.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-006</id>
@@ -47,6 +53,9 @@
         <autonomia>528</autonomia>
         <bateria>60</bateria>
         <disponibilidade>Em aluguer</disponibilidade>
+        <imagem>kia_ev6-cinza.webp</imagem>
+
+        
     </veiculo>
     <veiculo>
         <id>EV-007</id>
@@ -55,6 +64,7 @@
         <autonomia>340</autonomia>
         <bateria>100</bateria>
         <disponibilidade>Disponível</disponibilidade>
+        <imagem>peugeot-e_208-cinza.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-008</id>
@@ -63,6 +73,7 @@
         <autonomia>590</autonomia>
         <bateria>30</bateria>
         <disponibilidade>Em manutenção</disponibilidade>
+        <imagem>bmw-i4-preto.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-009</id>
@@ -71,6 +82,8 @@
         <autonomia>470</autonomia>
         <bateria>5</bateria>
         <disponibilidade>A carregar</disponibilidade>
+        <imagem>polestar-2-branco.png</imagem>
+    
     </veiculo>
     <veiculo>
         <id>EV-010</id>
@@ -79,5 +92,6 @@
         <autonomia>510</autonomia>
         <bateria>75</bateria>
         <disponibilidade>Disponível</disponibilidade>
+        <imagem>audi-q4_e_tron-verde.png</imagem>
     </veiculo>
 </frota>

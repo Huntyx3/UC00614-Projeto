@@ -39,6 +39,11 @@
       <div class="frota-grid">
         {% for veiculo in frota %}
         <div class="cartao-veiculo">
+          {% if veiculo.imagem %}
+        <img src="{{ url_for('static', filename='assets/' + veiculo.imagem) }}" 
+             alt="{{ veiculo.marca }} {{ veiculo.modelo }}" 
+             class="cartao-imagem">
+    {% endif %}
           <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
           <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
           <strong>Autonomia:</strong>
