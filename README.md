@@ -25,9 +25,7 @@ A aplicação simula o portal de monitorização e catálogo da **EcoRent** (emp
 ## 📅 Histórico de Versões e Datas
 | Versão | Data | Descrição / Alterações Efetuadas |
 | :--- | :--- | :--- |
-| **v1.0.0** | 2026-11-13 | Criação do repositório, estruturação do ficheiro `frota.xml` com 10 veículos elétricos e configuração do ambiente virtual com Flask. |
-| **v1.1.0** | 2026-11-16 | Implementação da função `lerXML()` com validação de bateria, criação das 3 páginas HTML interligadas, estilização CSS externa e barras visuais de bateria. |
-| **v1.2.0** | 2026-11-17 | Adição de filtros combinados (pesquisa por texto e *checkbox* de disponibilidade), integração de imagens individuais por veículo em `static/assets/` e organização final em `frota.html`. |
+| **v1.0.0** | 2026-11-17 | Lançamento da plataforma web funcional da EcoRent: leitura e validação do `frota.xml` via `ElementTree`, 3 páginas interligadas (`index.html`, `frota.html`, `contactos.html`), filtros combinados (pesquisa por marca/modelo e *checkbox* de disponibilidade), imagens por veículo e barras visuais de bateria em CSS3. |
 
 ---
 
