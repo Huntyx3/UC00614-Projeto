@@ -19,7 +19,7 @@ A aplicação simula o portal de monitorização e catálogo da **EcoRent** (emp
   - **`Flask` (v3+):** Micro-framework web utilizado para configurar o servidor local, gerir o roteamento entre páginas (`/` e rotas secundárias), capturar parâmetros de pesquisa via URL (`request.args`) e injetar os dados processados nos templates HTML (`render_template`).
   - **`Waitress`:** Servidor WSGI (*Web Server Gateway Interface*) utilizado para servir a aplicação Flask em ambiente de produção, permitindo a integração e o encaminhamento de pedidos (*Reverse Proxy*) com o **Apache Server**.
   - **`xml.etree.ElementTree` (Biblioteca nativa do Python):** Módulo responsável por abrir, percorrer (*parse*) e extrair os nós do ficheiro `frota.xml`, convertendo-os em estruturas de dados Python (listas de dicionários).
-- **Ambiente / Servidor:** Ambiente Virtual Python (`venv`), Servidor WSGI **Waitress** integrado com **Apache HTTP Server**, Servidor Localhost Flask (`http://127.0.0.1:5000`) e Git/GitHub.
+- **Ambiente / Servidor:** Ambiente Virtual Python (`venv`), Servidor WSGI **Waitress** integrado com **Apache HTTP Server**(`http://127.0.0.1:8080`), Servidor Localhost Flask (`http://127.0.0.1:5000`) e Git/GitHub.
 ---
 
 ## 📅 Histórico de Versões e Datas
