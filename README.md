@@ -16,7 +16,7 @@ A aplicação simula o portal de monitorização e catálogo da **EcoRent** (emp
   - **CSS3:** Estilização responsiva em grelha (*CSS Grid* e *Flexbox*) e renderização das barras visuais de nível de bateria.
   - **XML:** Armazenamento estruturado dos 10 registos da frota (`frota.xml`), cujos nós são ID, marca, modelo, autonomia, nível de bateria, disponibilidade e imagem associada.
 - **Bibliotecas e Módulos Python:**
-  - **`Flask` (v3.1+):** Micro-framework web utilizado para configurar o servidor local, gerir o roteamento entre páginas (`/` e rotas secundárias), capturar parâmetros de pesquisa via URL (`request.args`) e injetar os dados processados nos templates HTML (`render_template`).
+  - **`Flask` (v3+):** Micro-framework web utilizado para configurar o servidor local, gerir o roteamento entre páginas (`/` e rotas secundárias), capturar parâmetros de pesquisa via URL (`request.args`) e injetar os dados processados nos templates HTML (`render_template`).
   - **`Waitress`:** Servidor WSGI (*Web Server Gateway Interface*) utilizado para servir a aplicação Flask em ambiente de produção, permitindo a integração e o encaminhamento de pedidos (*Reverse Proxy*) com o **Apache Server**.
   - **`xml.etree.ElementTree` (Biblioteca nativa do Python):** Módulo responsável por abrir, percorrer (*parse*) e extrair os nós do ficheiro `frota.xml`, convertendo-os em estruturas de dados Python (listas de dicionários).
 - **Ambiente / Servidor:** Ambiente Virtual Python (`venv`), Servidor WSGI **Waitress** integrado com **Apache HTTP Server**, Servidor Localhost Flask (`http://127.0.0.1:5000`) e Git/GitHub.
