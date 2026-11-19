@@ -14,16 +14,23 @@ def lerXML(ficheiro):
                 try:
                     bateria = int(child.text)
                     veiculo["bateria"] = bateria if 0 <= bateria <= 100 else "Fora do intervalo esperado"
-                except ValueError:
+                except ValueError: # child.text não é uma string convertível em número
                     veiculo["bateria"] = "NaN"
+                except TypeError: # child.text is None
+                    veiculo["bateria"] = "N/A"
             elif child.tag == "autonomia":
                 try:
                     autonomia = int(child.text)
                     veiculo["autonomia"] = autonomia if autonomia > 0 else "Valor inválido"
-                except ValueError:
+                except ValueError: # child.text não é uma string convertível em número
                     veiculo["autonomia"] = "NaN"
-            else: 
-                veiculo[child.tag] = child.text
+                except TypeError: # child.text is None
+                    veiculo["bateria"] = "N/A"
+            else:
+                if child.text is None: # métodos do branch else causam runtime error se child.text is None
+                    veiculo[child.tag] = "N/A"
+                else:
+                    veiculo[child.tag] = " ".join(child.text.strip().split()) if child.text.strip() else "N/A"
 
         veiculos.append(veiculo)
 
@@ -40,15 +47,21 @@ def frota ():
     veiculos = lerXML("frota.xml")
 
     # obter texto no input field "pesquisa"
-    pesquisa = request.args.get('pesquisa', "")
+    pesquisa = request.args.get('pesquisa', "").strip().lower().split()
     disponivelFiltro = request.args.get("disponiveis")
 
     if pesquisa or disponivelFiltro:
         veiculos = [
-            v for v in veiculos 
-            if (pesquisa.lower() in v['marca'].lower() or pesquisa.lower() in v['modelo'].lower())
-            and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
+            v for v in veiculos
+            # se todas as palavras que compõe a lista pesquisa fazem parte da string obtida juntando marca e modelo
+                if all(palavra in v["marca"].lower() + v["modelo"].lower() for palavra in pesquisa)
+                and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
         ]
+        """ for v in veiculos:
+            veiculoTexto = v["marca"].lower() + v["modelo"].lower()
+            if all(termo in veiculoTexto for termo in pesquisa) and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível"):
+                veiculosFiltro.append(v)"""
+
     return render_template('frota.html', frota = veiculos)
 
 @app.route("/contactos")

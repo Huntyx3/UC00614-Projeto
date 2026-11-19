@@ -38,41 +38,40 @@
       </form>
       <div class="frota-grid">
         {% for veiculo in frota %}
-        <div class="cartao-veiculo">
-          {% if veiculo.imagem %}
-        <img src="{{ url_for('static', filename='assets/' + veiculo.imagem) }}" 
-             alt="{{ veiculo.marca }} {{ veiculo.modelo }}" 
-             class="cartao-imagem">
-    {% endif %}
-          <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
-          <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
-          <strong>Autonomia:</strong>
-          {% if veiculo.autonomia is number and veiculo.autonomia > 0 %}
-          <span>{{ veiculo.autonomia }} km</span>
-          {% else %}
-          <p style="color: #dc2626">Aviso: {{ veiculo.autonomia }}</p>
-          {% endif %}
-          <p><strong>Disponibilidade:</strong> {{ veiculo.disponibilidade }}</p>
-          <div>
-            <strong>Estado da Bateria:</strong>
-            {% if veiculo.bateria is number %}
-            <span>{{ veiculo.bateria }}%</span>
-            <div class="bateria-fundo">
-              <!-- O atributo style mantém-se aqui porque o Jinja2 só processa variáveis dentro dos templates HTML -->
-              <div
-                class="bateria-nivel"
-                style="width:{{ veiculo.bateria }}%; background-color: {% if veiculo.bateria > 50 %}#16a34a{% elif veiculo.bateria > 20 %}#ea580c{% else %}#dc2626{% endif %};"
-              >
-                {{ veiculo.bateria }}%
-              </div>
-            </div>
-            {% else %}
-            <p style="color: #dc2626">Aviso: {{ veiculo.bateria }}</p>
+          <div class="cartao-veiculo">
+            {% if veiculo.imagem %}
+              <img src="{{ url_for('static', filename='assets/' + veiculo.imagem) }}" 
+                alt="{{ veiculo.marca }} {{ veiculo.modelo }}" 
+                class="cartao-imagem">
             {% endif %}
+            <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
+            <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
+            <strong>Autonomia:</strong>
+            {% if veiculo.autonomia is number and veiculo.autonomia > 0 %}
+              <span>{{ veiculo.autonomia }} km</span>
+            {% else %}
+              <p style="color: #dc2626">Aviso: {{ veiculo.autonomia }}</p>
+            {% endif %}
+            <p><strong>Disponibilidade:</strong> {{ veiculo.disponibilidade }}</p>
+            <div>
+              <strong>Estado da Bateria:</strong>
+              {% if veiculo.bateria is number %}
+                <span>{{ veiculo.bateria }}%</span>
+                <div class="bateria-fundo">
+                  <!-- O atributo style mantém-se aqui porque o Jinja2 só processa variáveis dentro dos templates HTML -->
+                  <div
+                    class="bateria-nivel"style="width:{{ veiculo.bateria }}%; background-color: {% if veiculo.bateria > 50 %}#16a34a{% elif veiculo.bateria > 20 %}#ea580c{% else %}#dc2626{% endif %};"
+                  >
+                    {{ veiculo.bateria }}%
+                  </div>
+                </div>
+              {% else %}
+                <p style="color: #dc2626">Aviso: {{ veiculo.bateria }}</p>
+              {% endif %}
+            </div>
           </div>
-        </div>
-        {% else %}
-        <p>Nenhum veículo encontrado com os critérios pesquisados.</p>
+          {% else %}
+            <p>Nenhum veículo encontrado com os critérios pesquisados.</p>
         {% endfor %}
       </div>
     </main>

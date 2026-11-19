@@ -35,7 +35,7 @@
         <autonomia>520</autonomia>
         <bateria>15</bateria>
         <disponibilidade>A carregar</disponibilidade>
-         <imagem>volkswagem-id.4-azul.png</imagem>
+        <imagem>volkswagem-id.4-azul.png</imagem>
     </veiculo>
     <veiculo>
         <id>EV-005</id>
