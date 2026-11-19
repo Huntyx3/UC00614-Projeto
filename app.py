@@ -53,14 +53,20 @@ def frota ():
     if pesquisa or disponivelFiltro:
         veiculos = [
             v for v in veiculos
-            # se todas as palavras que compõe a lista pesquisa fazem parte da string obtida juntando marca e modelo
+            # se todas as palavras que compõem a lista pesquisa fazem parte da string obtida juntando marca e modelo
                 if all(palavra in v["marca"].lower() + v["modelo"].lower() for palavra in pesquisa)
                 and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
         ]
-        """ for v in veiculos:
-            veiculoTexto = v["marca"].lower() + v["modelo"].lower()
-            if all(termo in veiculoTexto for termo in pesquisa) and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível"):
-                veiculosFiltro.append(v)"""
+        
+        """ 
+        veiculosFiltro = []
+        for v in veiculos:
+            if (not disponivelFiltro or v["disponibilidade"].lower() == "disponível"):
+                veiculoTexto = v["marca"].lower() + v["modelo"].lower()
+                if all(palavra in veiculoTexto for palavra in pesquisa):
+                    veiculosFiltro.append(v)
+        veiculos = veiculosFiltro
+        """
 
     return render_template('frota.html', frota = veiculos)
 
