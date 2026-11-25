@@ -29,6 +29,7 @@
         <label class="filtro-checkbox">
             <input type="checkbox"
             name="disponiveis"
+            value="sim"
             {% if request.args.get('disponiveis') %}checked{% endif %}
             >
         Apenas disponíveis
@@ -47,7 +48,7 @@
             <h3>{{ veiculo.marca }} {{ veiculo.modelo }}</h3>
             <p><strong>ID do Veículo:</strong> {{ veiculo.id }}</p>
             <strong>Autonomia:</strong>
-            {% if veiculo.autonomia is number and veiculo.autonomia > 0 %}
+            {% if veiculo.autonomia is number %}
               <span>{{ veiculo.autonomia }} km</span>
             {% else %}
               <p style="color: #dc2626">Aviso: {{ veiculo.autonomia }}</p>
