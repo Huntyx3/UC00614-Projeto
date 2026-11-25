@@ -30,13 +30,13 @@ def lerXML(ficheiro):
                 if child.text is None: # métodos do branch else causam runtime error se child.text is None
                     veiculo[child.tag] = "N/A"
                 else:
-                    veiculo[child.tag] = " ".join(child.text.strip().split()) if child.text.strip() else "N/A"
+                    veiculo[child.tag] = " ".join(child.text.split()) if child.text.strip() else "N/A"
 
         veiculos.append(veiculo)
 
     return veiculos
 
-# render_template para ligar ficheiros ao html
+# render_template gerar o html baseado no template
 app = Flask(__name__, template_folder="templates")
 @app.route("/")
 def index ():
@@ -47,15 +47,20 @@ def frota ():
     veiculos = lerXML("frota.xml")
 
     # obter texto no input field "pesquisa"
-    pesquisa = request.args.get('pesquisa', "").strip().lower().split()
+    pesquisa = request.args.get('pesquisa', "").lower().split()
     disponivelFiltro = request.args.get("disponiveis")
 
     if pesquisa or disponivelFiltro:
         veiculos = [
             v for v in veiculos
-            # se todas as palavras que compõem a lista pesquisa fazem parte da string obtida juntando marca e modelo
-                if all(palavra in v["marca"].lower() + v["modelo"].lower() for palavra in pesquisa)
-                and (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
+                if 
+                # Se todas as palavras que compõem a lista pesquisa fazem parte da string obtida juntando marca e modelo.
+                # Se pesquisa = [] (caixa de texto "pesquisa" vazia ou só com whitespace), a função all() returns True
+                all(palavra in v["marca"].lower() + v["modelo"].lower() for palavra in pesquisa)
+                and
+                # Se checkbox não marcada, é verdade para todos os veículos
+                # Se checkbox marcada, veículo tem de estar disponível
+                (not disponivelFiltro or v["disponibilidade"].lower() == "disponível")
         ]
         
         """ 

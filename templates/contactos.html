@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contactos - Gestão de Frota EV</title>
-    <!-- Liga ao mesmo ficheiro CSS usado no catálogo -->
+    <title>EcoRent - Contactos</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
   <body>
-    <!-- Menu de navegação idêntico ao das restantes páginas -->
     <nav>
       <a href="/">Início</a>
       <a href="/frota">Frota</a>
@@ -26,9 +24,7 @@
         postos de carregamento ou assistência em viagem.
       </p>
 
-      <!-- Reutiliza a grelha e os cartões do style.css para manter o visual uniforme -->
       <div class="frota-grid">
-        <!-- Cartão 1: Morada e Horário -->
         <div class="cartao-veiculo">
           <h3>Sede e Parque de Frota</h3>
           <p>
@@ -41,19 +37,20 @@
           </p>
         </div>
 
-        <!-- Cartão 2: Contactos Diretos -->
         <div class="cartao-veiculo">
           <h3>Contactos</h3>
-          <p><strong>Apoio e Reservas (das 08h00 às 20h00):</strong> +351 210 123 456</p>
+          <p>
+            <strong>Apoio e Reservas (das 08h00 às 20h00):</strong> +351 210 123
+            456
+          </p>
           <p><strong>Assistência em Viagem (24h):</strong> +351 800 200 300</p>
           <p><strong>Email:</strong> frota@ecorent-ev.pt</p>
         </div>
       </div>
     </main>
-    <!-- Rodapé (Footer) -->
     <footer>
       <div class="footer-conteudo">
-        <!-- Coluna Esquerda: Newsletter -->
+        <!-- Coluna Esquerda -->
         <div class="footer-newsletter">
           <h3>ASSINE A NOSSA NEWSLETTER</h3>
           <form
@@ -72,7 +69,7 @@
           </form>
         </div>
 
-        <!-- Coluna Direita: Links Úteis -->
+        <!-- Coluna Direita -->
         <div class="footer-links">
           <h3>ÚTEIS</h3>
           <ul>

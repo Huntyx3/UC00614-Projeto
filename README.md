@@ -1,8 +1,11 @@
 # EcoRent — Gestão de Frota de Veículos Elétricos (UC00614)
-# Autores: Ana Fundo (8095820), Marcelo Gonçalves (8448175), Nuno Fontes (6742840),
-# Data: 13/11/2026 a 23/11/2026
+
+## Autores: Ana Fundo (8095820), Marcelo Gonçalves (8448175), Nuno Fontes (6742840)
+
+## Data: 13/11/2026 a 25/11/2026
 
 ## 📋 Descrição Geral
+
 Plataforma web desenvolvida no âmbito do trabalho prático do módulo **UC00614** (Grupo 1 — Gestão de Frota de Veículos Elétricos), concebida para consolidar competências em desenvolvimento web, estruturação de dados e programação backend num ciclo de desenvolvimento de ~10 horas.
 
 A aplicação simula o portal de monitorização e catálogo da **EcoRent** (empresa fictícia de rent-a-car sustentável sediada na Guarda). O sistema lê os dados dos veículos de um ficheiro **XML** estruturado, valida os valores da bateria, permite filtragem combinada (por marca/modelo e disponibilidade) e apresenta barras de progresso visuais para o estado da bateria de cada viatura.
@@ -10,6 +13,7 @@ A aplicação simula o portal de monitorização e catálogo da **EcoRent** (emp
 ---
 
 ## 🛠️ Tecnologias, Versões e Ferramentas
+
 - **Linguagem:** Python 3 (desenvolvido em Python 3.14)
 - **Tecnologias Web e Dados:**
   - **HTML5:** Estruturação semântica das páginas (`index.html`, `frota.html` e `contactos.html`) com motor de templates **Jinja2**.
@@ -20,17 +24,21 @@ A aplicação simula o portal de monitorização e catálogo da **EcoRent** (emp
   - **`Waitress`:** Servidor WSGI (*Web Server Gateway Interface*) utilizado para servir a aplicação Flask em ambiente de produção, permitindo a integração e o encaminhamento de pedidos (*Reverse Proxy*) com o **Apache Server**.
   - **`xml.etree.ElementTree` (Biblioteca nativa do Python):** Módulo responsável por abrir, percorrer (*parse*) e extrair os nós do ficheiro `frota.xml`, convertendo-os em estruturas de dados Python (listas de dicionários).
 - **Ambiente / Servidor:** Ambiente Virtual Python (`venv`), Servidor WSGI **Waitress** integrado com **Apache HTTP Server**(`http://127.0.0.1:8080`), Servidor Localhost Flask (`http://127.0.0.1:5000`) e Git/GitHub.
+
 ---
 
 ## 📅 Histórico de Versões e Datas
+
 | Versão | Data | Descrição / Alterações Efetuadas |
 | :--- | :--- | :--- |
-| **v1.0.0** | 2026-11-17 | Lançamento da plataforma web funcional da EcoRent: leitura e validação do `frota.xml` via `ElementTree`, 3 páginas interligadas (`index.html`, `frota.html`, `contactos.html`), filtros combinados (pesquisa por marca/modelo e *checkbox* de disponibilidade), imagens por veículo e barras visuais de bateria em CSS3. |
+| **v1.0.0** | 2026-11-25 | Lançamento da plataforma web funcional da EcoRent: leitura e validação do `frota.xml` via `ElementTree`, 3 páginas interligadas (`index.html`, `frota.html`, `contactos.html`), filtros combinados (pesquisa por marca/modelo e *checkbox* de disponibilidade), imagens por veículo e barras visuais de bateria em CSS3. |
 
 ---
 
 ## 📂 Estrutura do Repositório
+
 Organização atual dos ficheiros e pastas do projeto:
+
 ```text
 /UC00614-Projeto/
 ├── 📁 static/
