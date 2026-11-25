@@ -105,6 +105,15 @@ main {
   color: #0f172a;
 }
 
+.cartao-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Recorta a imagem proporcionalmente sem a esticar */
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: block;
+}
+
 /* Desafio de Pesquisa: Contentor exterior da barra de bateria */
 .bateria-fundo {
   width: 100%;

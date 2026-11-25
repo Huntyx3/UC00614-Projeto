@@ -1,18 +1,30 @@
 @echo off
-REM Impede que os comandos sejam mostrados no terminal.
-
-title Servidor Flask Waitress
-REM Define o titulo da janela do terminal.
-
+chcp 65001 >nul 2>&1
+ 
+title EcoRent - Servidor WSGI (Flask Waitress)
+ 
 cd /d "%~dp0"
-REM Entra automaticamente na pasta onde esta este ficheiro .bat.
+ 
+if exist "venv\Scripts\python.exe" (
+    set "PYTHON=venv\Scripts\python.exe"
+) else (
+    set "PYTHON=python"
+)
 
-echo A iniciar o servidor...
-REM Apresenta uma mensagem informativa no terminal.
-
-set "PYTHON=venv\Scripts\python.exe"
-REM Usa o Python do ambiente virtual (venv)
-
-echo Servidor a correr. Ctrl+C para parar o servidor
+"%PYTHON%" -c "import waitress" >nul 2>&1
+if errorlevel 1 (
+    echo O Waitress não está instalado.
+    echo Instala com:
+    echo     "%PYTHON%" -m pip install waitress
+    pause
+    exit /b 1
+)
+ 
+echo A iniciar o Waitress...
+echo Abre no navegador: http://localhost
+echo Para parar o servidor: Ctrl+C
+echo.
+ 
 "%PYTHON%" wsgi.py
-REM Executa wsgi.py, que contém o proxy para comunicar com apache server
+ 
+pause
